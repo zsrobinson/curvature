@@ -9,7 +9,7 @@ type LayoutProps = { children: React.ReactNode };
 export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-zinc-950 text-zinc-50">{children}</body>
     </html>
   );
 }
