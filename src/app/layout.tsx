@@ -7,7 +7,10 @@ type LayoutProps = { children: React.ReactNode };
 export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className="flex h-screen flex-col bg-zinc-950 text-zinc-50">
+      <body
+        className="flex h-screen flex-col bg-zinc-950 text-zinc-50"
+        style={{ colorScheme: "dark" }}
+      >
         <Navbar />
         {children}
       </body>

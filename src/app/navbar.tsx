@@ -24,6 +24,7 @@ export function Navbar() {
         >
           Cycloid
         </Link>
+
         <Link
           href="/oval"
           className={
@@ -34,6 +35,18 @@ export function Navbar() {
         >
           Oval
         </Link>
+
+        <Link
+          href="/rose"
+          className={
+            path.includes("rose")
+              ? "font-bold underline underline-offset-4"
+              : "text-zinc-400"
+          }
+        >
+          Rose
+        </Link>
+
         <Link
           href="/slanted-sin"
           className={
