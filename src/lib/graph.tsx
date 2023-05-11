@@ -1,38 +1,22 @@
 "use client";
 
-import {
-  Circle,
-  Coordinates,
-  Mafs,
-  Plot,
-  Point,
-  Text,
-  Vector,
-  useStopwatch,
-} from "mafs";
+import { Circle, Coordinates, Mafs, Plot, Point, useStopwatch } from "mafs";
 import { useEffect } from "react";
 
-export function Graph() {
+export function Graph({ s }: { s: func[] }) {
   const { time: t, start, stop } = useStopwatch({});
 
   useEffect(() => start(), [start]);
 
   useEffect(() => {
-    if (t > 6 * Math.PI) {
+    if (t > 4 * Math.PI) {
       stop();
       start();
     }
   });
 
-  const a = 0.5;
-  const b = 0.5;
-  const kay = 2;
-
-  /** Original Parametric Equation */
-  const s = [
-    (t: number) => Math.sin(kay * t) * Math.cos(t),
-    (t: number) => Math.sin(kay * t) * Math.sin(t),
-  ];
+  const a = 1;
+  const b = 1.5;
 
   const dsdt = [deriv(s[0]), deriv(s[1])];
 
@@ -70,13 +54,22 @@ export function Graph() {
         xy={(t) => [s[0](t), s[1](t)]}
         opacity={0.6}
       />
-      <Point x={s[0](t)} y={s[1](t)} />
 
-      {dsdt[0](t) < 0 ? (
-        <Circle center={[circleCenterX, circleCenterYNeg]} radius={R} />
+      {dTds[1](t) > 0 ? (
+        <Circle
+          center={[circleCenterXNeg, circleCenterY]}
+          radius={R}
+          color="SkyBlue"
+        />
       ) : (
-        <Circle center={[circleCenterXNeg, circleCenterY]} radius={R} />
+        <Circle
+          center={[circleCenterX, circleCenterYNeg]}
+          radius={R}
+          color="SkyBlue"
+        />
       )}
+
+      <Point x={s[0](t)} y={s[1](t)} />
     </Mafs>
   );
 }

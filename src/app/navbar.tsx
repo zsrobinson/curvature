@@ -1,13 +1,50 @@
+"use client";
+
 import { IconBrandGithub, IconRotate360 } from "@tabler/icons-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+  const path = usePathname();
   return (
     <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900 px-8 py-4">
       <Link href="/" className="flex items-center gap-2">
         <IconRotate360 />
         <h1 className="text-xl font-bold">Curvature Project</h1>
       </Link>
+
+      <div className="flex gap-4">
+        <Link
+          href="/cycloid"
+          className={
+            path.includes("cycloid")
+              ? "font-bold underline underline-offset-4"
+              : "text-zinc-400"
+          }
+        >
+          Cycloid
+        </Link>
+        <Link
+          href="/oval"
+          className={
+            path.includes("oval")
+              ? "font-bold underline underline-offset-4"
+              : "text-zinc-400"
+          }
+        >
+          Oval
+        </Link>
+        <Link
+          href="/slanted-sin"
+          className={
+            path.includes("slanted-sin")
+              ? "font-bold underline underline-offset-4"
+              : "text-zinc-400"
+          }
+        >
+          Slanted Sin
+        </Link>
+      </div>
 
       <a
         href="https://github.com/zsrobinson/curvature"
