@@ -1,6 +1,6 @@
 import "mafs/core.css";
 import "mafs/font.css";
-import Link from "next/link";
+import "katex/dist/katex.min.css";
 
 export function LessonLayout({
   children,
@@ -14,7 +14,7 @@ export function LessonLayout({
   return (
     <div className="flex grow">
       <div className="h-full w-1/3 border-r border-zinc-800 bg-zinc-900/50 p-8">
-        <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
+        <h2 className="pb-2 text-3xl font-bold tracking-tight">{title}</h2>
         {children}
       </div>
       <div className="h-full grow">{graph}</div>
