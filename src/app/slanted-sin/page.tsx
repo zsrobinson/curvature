@@ -15,7 +15,7 @@ export default function Page() {
       graph={<Graph s={slatedSin(a, b)} />}
     >
       <p>This curve is defined by the following parametric equations:</p>
-      <BlockMath math="x(t) = at-b\sin(t) \\ y(t) = a-b\cos(t)" />
+      <BlockMath math="x(t) = at-b\sin(t) \\ y(t) = \sin(t)" />
       <p>
         In this example, <InlineMath math={`a=${a}`} /> and{" "}
         <InlineMath math={`b=${b}`} />.
