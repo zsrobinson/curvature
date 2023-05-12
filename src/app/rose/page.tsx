@@ -5,7 +5,7 @@ import { BlockMath, InlineMath } from "react-katex";
 import { LessonLayout } from "~/components/lesson-layout";
 import { Slider } from "~/components/slider";
 import { rose } from "~/lib/curves";
-import { Graph } from "~/lib/graph";
+import { Graph } from "~/components/graph";
 
 export default function Page() {
   const [a, setA] = useState(3);
