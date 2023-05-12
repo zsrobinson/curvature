@@ -17,7 +17,7 @@ export default function Page() {
   ];
 
   return (
-    <LessonLayout title="Slanted Sin Wave" graph={<Graph s={rose(a, k)} />}>
+    <LessonLayout title="Rose" graph={<Graph s={rose(a, k)} />}>
       <p>This curve is defined by the following parametric equations:</p>
       <BlockMath math="x(t) = a\cos(kt)\cos(t) \\ y(t) = a\cos(kt)\sin(t)" />
 
