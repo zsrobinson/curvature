@@ -1,7 +1,3 @@
-import "mafs/core.css";
-import "mafs/font.css";
-import "katex/dist/katex.min.css";
-
 export function LessonLayout({
   children,
   title,

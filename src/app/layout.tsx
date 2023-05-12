@@ -3,6 +3,10 @@ import { Navbar } from "./navbar";
 
 export const metadata = { title: "Curvature Project" };
 
+import "mafs/core.css";
+import "mafs/font.css";
+import "katex/dist/katex.min.css";
+
 type LayoutProps = { children: React.ReactNode };
 export default function Layout({ children }: LayoutProps) {
   return (
