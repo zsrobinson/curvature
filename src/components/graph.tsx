@@ -24,7 +24,7 @@ export function Graph({ s }: { s: func[] }) {
         xy={(t) => [s[0](t), s[1](t)]}
         opacity={0.6}
       />
-      <Curvature s={s} t={t} showPoint />
+      <Curvature s={s} t={t} showPoint showTangent />
       <Point x={s[0](t)} y={s[1](t)} />
     </Mafs>
   );

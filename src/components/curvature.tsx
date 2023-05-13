@@ -1,10 +1,21 @@
 "use client";
 
-import { Circle, Point, vec } from "mafs";
+import { Circle, Point, Vector, vec } from "mafs";
 import { deriv, func, mag } from "~/lib/utils";
 
-type CurvatureProps = { s: func[]; t: number; showPoint?: boolean };
-export function Curvature({ s, t, showPoint = false }: CurvatureProps) {
+type CurvatureProps = {
+  s: func[];
+  t: number;
+  showPoint?: boolean;
+  showTangent?: boolean;
+};
+
+export function Curvature({
+  s,
+  t,
+  showPoint = false,
+  showTangent = false,
+}: CurvatureProps) {
   /** Evaluates a "vector function" at time t */
   const evalVec = (v: func[]): vec.Vector2 => [v[0](t), v[1](t)];
 
@@ -34,6 +45,9 @@ export function Curvature({ s, t, showPoint = false }: CurvatureProps) {
     <>
       <Circle center={circle} radius={R} color="SkyBlue" />
       {showPoint && <Point x={circle[0]} y={circle[1]} color="SkyBlue" />}
+      {showTangent && (
+        <Vector tail={evalVec(s)} tip={vec.add(evalVec(s), evalVec(dsdt))} />
+      )}
     </>
   );
 }
