@@ -57,6 +57,17 @@ export function Navbar() {
         >
           Slanted Sin
         </Link>
+
+        <Link
+          href="/heart"
+          className={
+            path.includes("heart")
+              ? "font-bold underline underline-offset-4"
+              : "text-zinc-400"
+          }
+        >
+          Heart
+        </Link>
       </div>
 
       <a

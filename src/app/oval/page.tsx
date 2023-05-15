@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { BlockMath } from "react-katex";
+import { Graph } from "~/components/graph";
 import { LessonLayout } from "~/components/lesson-layout";
 import { Slider } from "~/components/slider";
 import { oval } from "~/lib/curves";
-import { Graph } from "~/components/graph";
 
 export default function Page() {
   const [a, setA] = useState(0.5);
