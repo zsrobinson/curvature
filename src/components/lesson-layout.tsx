@@ -13,9 +13,7 @@ export function LessonLayout({
         <h2 className="pb-2 text-3xl font-bold tracking-tight">{title}</h2>
         {children}
       </div>
-      <div className="h-full grow overflow-hidden md:overflow-auto">
-        {graph}
-      </div>
+      {graph}
     </div>
   );
 }
