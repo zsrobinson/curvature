@@ -1,6 +1,6 @@
 "use client";
 
-import { Mafs, Plot, Text, useStopwatch } from "mafs";
+import { Coordinates, Mafs, Plot, Text, useStopwatch } from "mafs";
 import { useEffect, useRef } from "react";
 import { cycloid } from "~/lib/curves";
 import { easeInOutSine } from "~/lib/utils";
@@ -8,11 +8,8 @@ import { Curvature } from "./curvature";
 
 export function HomepageGraph() {
   const s = cycloid(1, 3);
-  const parentRef = useRef<HTMLDivElement>(null);
-
   const { time, start } = useStopwatch();
   useEffect(() => start(), [start]);
-
   const easedTimeCurve = easeInOutSine(time * 0.15);
   const lowerBound = -3 * Math.PI;
   const upperBound =
@@ -23,7 +20,7 @@ export function HomepageGraph() {
   const opacityMultiplier = time < 1 / 0.15 ? easedTimeCurve : 1;
 
   return (
-    <div className="flex w-full" ref={parentRef}>
+    <div className="flex w-screen justify-center">
       <Mafs pan={false} width="auto" viewBox={{ x: [-9, 9], y: [-5, 4] }}>
         <Plot.Parametric
           xy={(t) => [s[0](t), s[1](t)]}

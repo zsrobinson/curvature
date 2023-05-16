@@ -19,7 +19,7 @@ export default function Page() {
       </section>
 
       <section className="flex min-h-screen flex-col">
-        <div className="mx-48 flex grow items-center gap-8 p-8">
+        <div className="flex grow flex-col items-center gap-8 p-8 md:mx-24 md:flex-row lg:mx-48">
           <div className="group rounded-xl border border-zinc-700 bg-zinc-900 p-4 transition hover:scale-[1.01]">
             <div className="mb-2 flex items-center gap-2">
               <h2 className="text-xl font-bold">Walkthrough</h2>
