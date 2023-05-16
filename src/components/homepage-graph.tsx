@@ -35,7 +35,6 @@ export function HomepageGraph() {
           t={circleTime}
           strokeOpacity={0.5 * opacityMultiplier}
           fillOpacity={0.1 * opacityMultiplier}
-          showPoint
         />
       </Mafs>
     </div>
