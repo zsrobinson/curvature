@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 export function Navbar() {
   const path = usePathname();
   return (
-    <div className="flex flex-wrap items-center justify-between gap-1 border-b border-zinc-800 bg-zinc-900 p-4 md:px-8">
+    <div className="z-10 flex flex-wrap items-center justify-between gap-1 border-b border-zinc-800 bg-zinc-900 p-4 md:px-8">
       <Link href="/" className="flex items-center gap-2">
         <IconRotate360 />
         <h1 className="text-xl font-bold">Curvature Project</h1>

@@ -1,3 +1,81 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  } */
+
+  .dark {
+    --background: 9 9 11; /* zinc-950 */
+    --foreground: 244 244 245; /* zinc-100 */
+
+    --muted: 24 24 27; /* zinc-900 */
+    --muted-foreground: 113 113 122; /* zinc-500 */
+
+    --popover: 24 24 27; /* zinc-900 */
+    --popover-foreground: 244 244 245; /* zinc-100 */
+
+    --card: 0 255 0; /* PLACEHOLDER */
+    --card-foreground: 0 255 0; /* PLACEHOLDER */
+
+    --border: 63 63 70; /* zinc-700 */
+    --input: 63 63 70; /* zinc-700 */
+
+    --primary: 244 244 245; /* zinc-100 */
+    --primary-foreground: 24 24 27; /* zinc-900 */
+
+    --secondary: 39 39 42; /* zinc-800 */
+    --secondary-foreground: 244 244 245; /* zinc-100 */
+
+    --accent: 39 39 42; /* zinc-800 */
+    --accent-foreground: 244 244 245; /* zinc-100 */
+
+    --destructive: 127 29 29; /* red-800 */
+    --destructive-foreground: 254 226 226; /* red-100 */
+
+    --ring: 39 39 42; /* zinc-800 */
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

@@ -8,6 +8,8 @@ type CurvatureProps = {
   t: number;
   showPoint?: boolean;
   showTangent?: boolean;
+  strokeOpacity?: number;
+  fillOpacity?: number;
 };
 
 export function Curvature({
@@ -15,6 +17,8 @@ export function Curvature({
   t,
   showPoint = false,
   showTangent = false,
+  strokeOpacity = 1,
+  fillOpacity = 0.15,
 }: CurvatureProps) {
   /** Evaluates a "vector function" at time t */
   const evalVec = (v: func[]): vec.Vector2 => [v[0](t), v[1](t)];
@@ -43,8 +47,21 @@ export function Curvature({
 
   return (
     <>
-      <Circle center={circle} radius={R} color="SkyBlue" />
-      {showPoint && <Point x={circle[0]} y={circle[1]} color="SkyBlue" />}
+      <Circle
+        center={circle}
+        radius={R}
+        color="SkyBlue"
+        strokeOpacity={strokeOpacity}
+        fillOpacity={fillOpacity}
+      />
+      {showPoint && (
+        <Point
+          x={circle[0]}
+          y={circle[1]}
+          color="SkyBlue"
+          opacity={strokeOpacity}
+        />
+      )}
       {showTangent && (
         <Vector tail={evalVec(s)} tip={vec.add(evalVec(s), evalVec(dsdt))} />
       )}
