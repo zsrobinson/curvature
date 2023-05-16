@@ -15,9 +15,9 @@ export function Navbar() {
 
       <div className="flex gap-4">
         <Link
-          href="/cycloid"
+          href="/examples/cycloid"
           className={
-            path.includes("cycloid")
+            path.includes("examples/cycloid")
               ? "font-bold underline underline-offset-4"
               : "text-zinc-400"
           }
@@ -26,9 +26,9 @@ export function Navbar() {
         </Link>
 
         <Link
-          href="/oval"
+          href="/examples/oval"
           className={
-            path.includes("oval")
+            path.includes("examples/oval")
               ? "font-bold underline underline-offset-4"
               : "text-zinc-400"
           }
@@ -37,9 +37,9 @@ export function Navbar() {
         </Link>
 
         <Link
-          href="/rose"
+          href="/examples/rose"
           className={
-            path.includes("rose")
+            path.includes("examples/rose")
               ? "font-bold underline underline-offset-4"
               : "text-zinc-400"
           }
@@ -48,9 +48,9 @@ export function Navbar() {
         </Link>
 
         <Link
-          href="/slanted-sin"
+          href="/examples/slanted-sin"
           className={
-            path.includes("slanted-sin")
+            path.includes("examples/slanted-sin")
               ? "font-bold underline underline-offset-4"
               : "text-zinc-400"
           }
@@ -59,9 +59,9 @@ export function Navbar() {
         </Link>
 
         <Link
-          href="/heart"
+          href="/examples/heart"
           className={
-            path.includes("heart")
+            path.includes("examples/heart")
               ? "font-bold underline underline-offset-4"
               : "text-zinc-400"
           }
