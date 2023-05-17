@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body
-        className="flex h-screen flex-col bg-zinc-950 text-zinc-50"
+        className="dark flex h-screen flex-col bg-zinc-950 text-zinc-50"
         style={{ colorScheme: "dark" }}
       >
         <Navbar />
