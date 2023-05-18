@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { InlineMath } from "react-katex";
 import { Graph } from "~/components/graph";
 import { LessonLayout } from "~/components/lesson-layout";
@@ -68,6 +68,69 @@ export default function Page() {
           className={"font-mono " + (yHasError ? "border border-red-500" : "")}
         />
       </div>
+
+      <h3 className="mt-4 text-xl font-semibold">Syntax Cheat Sheet</h3>
+      <SyntaxCheatSheet />
     </LessonLayout>
+  );
+}
+
+function SyntaxCheatSheet() {
+  return (
+    <ul className="list-inside list-disc">
+      <li>
+        Addition: <Code>t + 5</Code>
+      </li>
+      <li>
+        Subtraction: <Code>t - 5</Code>
+      </li>
+      <li>
+        Multiplication: <Code>t * 5</Code>
+      </li>
+      <li>
+        Division: <Code>t / 5</Code>
+      </li>
+      <li>
+        Exponentiation: <Code>Math.pow(t, 2)</Code> or <Code>t**2</Code>
+      </li>
+      <li>
+        Square root: <Code>Math.sqrt(t)</Code>
+      </li>
+      <li>
+        Natural logarithm: <Code>Math.log(t)</Code>
+      </li>
+      <li>
+        Logarithm base 10: <Code>Math.log10(t)</Code>
+      </li>
+      <li>
+        Absolute value: <Code>Math.abs(t)</Code>
+      </li>
+      <li>
+        Sine: <Code>Math.sin(t)</Code>
+      </li>
+      <li>
+        Cosine: <Code>Math.cos(t)</Code>
+      </li>
+      <li>
+        Tangent: <Code>Math.tan(t)</Code>
+      </li>
+      <li>
+        Pi: <Code>Math.PI</Code>
+      </li>
+      <li>
+        Euler&apos;s number (e): <Code>Math.E</Code>
+      </li>
+      <li>
+        Rounding: <Code>Math.round(t)</Code>
+      </li>
+    </ul>
+  );
+}
+
+function Code({ children }: { children: ReactNode }) {
+  return (
+    <span className="rounded-md bg-zinc-800 px-1 py-0.5 font-mono text-sm">
+      {children}
+    </span>
   );
 }
