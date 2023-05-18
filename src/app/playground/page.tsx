@@ -2,7 +2,7 @@
 
 import { IconPlus, IconX } from "@tabler/icons-react";
 import * as math from "mathjs";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { BlockMath, InlineMath } from "react-katex";
 import { Graph } from "~/components/graph";
 import { LessonLayout } from "~/components/lesson-layout";
@@ -19,7 +19,6 @@ type Slider = {
 };
 
 export default function Page() {
-  // https://medium.com/swlh/how-to-store-a-function-with-the-usestate-hook-in-react-8a88dd4eede1
   const [xNode, setXNode] = useState<math.MathNode>(math.parse("t"));
   const [yNode, setYNode] = useState<math.MathNode>(math.parse("sin(t)"));
 
@@ -31,7 +30,6 @@ export default function Page() {
     { variable: "b", value: 3 },
   ]);
 
-  // convert to {a: 1, b: 3} without using reduce
   const scope = Object.fromEntries(
     sliders.map((slider) => [slider.variable, slider.value])
   );
