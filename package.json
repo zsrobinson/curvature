@@ -21,6 +21,7 @@
     "eslint-config-next": "^13.4.1",
     "lucide-react": "^0.216.0",
     "mafs": "^0.16.0",
+    "mathjs": "^11.8.0",
     "next": "^13.4.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
