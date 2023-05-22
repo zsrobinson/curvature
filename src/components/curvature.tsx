@@ -45,6 +45,8 @@ export function Curvature({
   const R = 1 / k(t);
   const circle = vec.add(evalVec(s), vec.withMag(evalVec(dTds), R));
 
+  if (isNaN(circle[0]) || isNaN(circle[1])) return null;
+
   return (
     <>
       <Circle
