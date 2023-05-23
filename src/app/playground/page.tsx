@@ -3,12 +3,13 @@
 import * as math from "mathjs";
 import { useState } from "react";
 import { BlockMath, InlineMath } from "react-katex";
-import { Graph } from "~/components/graph";
 import { LessonLayout } from "~/components/lesson-layout";
 import { Input } from "~/components/ui/input";
 import { Slider } from "./slider";
 import { SliderControl } from "./slider-control";
 import { SliderHeader } from "./slider-header";
+import { BoundInput } from "./bound-input";
+import { Graph } from "./graph";
 
 export default function Page() {
   const [xNode, setXNode] = useState<math.MathNode>(math.parse("t"));
@@ -16,6 +17,9 @@ export default function Page() {
 
   const [xError, setXError] = useState("");
   const [yError, setYError] = useState("");
+
+  const [graphRange, setGraphRange] = useState<[number, number]>([-10, 10]);
+  const [circleRange, setCircleRange] = useState<[number, number]>([0, 6.28]);
 
   const [sliders, setSliders] = useState<Slider[]>([
     { variable: "a", value: 1 },
@@ -35,6 +39,8 @@ export default function Page() {
             (t) => xNode.compile().evaluate({ ...scope, t }),
             (t) => yNode.compile().evaluate({ ...scope, t }),
           ]}
+          graphRange={graphRange}
+          circleRange={circleRange}
         />
       }
     >
@@ -112,6 +118,16 @@ export default function Page() {
             <span className="text-sm text-red-300">{yError}</span>
           )}
         </div>
+      </div>
+
+      <div className="flex flex-col gap-2 py-4">
+        <p className="text-xl font-bold">Bounds</p>
+        <BoundInput value={graphRange} setValue={setGraphRange} type="graph" />
+        <BoundInput
+          value={circleRange}
+          setValue={setCircleRange}
+          type="circle"
+        />
       </div>
 
       <SliderHeader sliders={sliders} setSliders={setSliders} />

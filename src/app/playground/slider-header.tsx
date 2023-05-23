@@ -26,7 +26,7 @@ export function SliderHeader({ sliders, setSliders }: SliderHeaderProps) {
   const [dialogError, setDialogError] = useState("");
 
   return (
-    <div className="flex items-center justify-between pt-4">
+    <div className="flex items-center justify-between">
       <p className="text-xl font-bold">Sliders</p>
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogTrigger asChild>
