@@ -13,7 +13,7 @@ export default function Page() {
   const gallery = ["cycloid", "heart", "oval", "rose", "slanted-sine"];
 
   return (
-    <main className="m-8 flex flex-col items-center gap-8">
+    <main className="flex flex-col items-center gap-8 p-8">
       <h2 className="text-3xl font-semibold">Gallery</h2>
       <div className="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
         <GalleryCard
