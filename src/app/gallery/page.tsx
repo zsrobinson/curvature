@@ -33,7 +33,7 @@ export default function Page() {
         />
         <GalleryCard
           title="Slanted Sine Wave"
-          href="/gallery/slanted-sin"
+          href="/gallery/slanted-sine"
           icon={<IconWaveSine size={72} />}
         />
         <GalleryCard

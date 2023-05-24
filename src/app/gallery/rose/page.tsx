@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BlockMath } from "react-katex";
+import { BlockMath, InlineMath } from "react-katex";
 import { Graph } from "~/components/graph";
 import { LessonLayout } from "~/components/lesson-layout";
 import { Slider } from "~/components/slider";
@@ -23,6 +23,13 @@ export default function Page() {
 
       <Slider value={a} setValue={setA} label="a" min={0} max={10} step={0.1} />
       <Slider value={k} setValue={setK} label="k" min={0} max={10} step={1} />
+
+      <p className="pt-4">
+        <b>Tip:</b> <InlineMath math="k" /> controls how many petals the rose
+        has, with odd values of <InlineMath math="k" /> producing{" "}
+        <InlineMath math="k" /> petals and even values of{" "}
+        <InlineMath math="k" /> producing <InlineMath math="2k" /> petals.
+      </p>
     </LessonLayout>
   );
 }

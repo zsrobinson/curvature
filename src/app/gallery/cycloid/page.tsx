@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BlockMath } from "react-katex";
+import { BlockMath, InlineMath } from "react-katex";
 import { Graph } from "~/components/graph";
 import { LessonLayout } from "~/components/lesson-layout";
 import { Slider } from "~/components/slider";
@@ -18,6 +18,11 @@ export default function Page() {
 
       <Slider value={a} setValue={setA} label="a" min={0} max={3} step={0.1} />
       <Slider value={b} setValue={setB} label="b" min={0} max={3} step={0.1} />
+
+      <p className="pt-4">
+        <b>Tip:</b> setting <InlineMath math="a" /> and <InlineMath math="b" />{" "}
+        to the same value will form cusps on the curve.
+      </p>
     </LessonLayout>
   );
 }
