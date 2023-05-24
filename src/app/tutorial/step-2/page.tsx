@@ -94,9 +94,14 @@ export default function Page() {
         </div>
       </div>
 
-      <Button asChild className="mt-8 w-full" variant="secondary">
-        <Link href="/tutorial/step-3">Next Step</Link>
-      </Button>
+      <div className="mt-8 flex w-full gap-4">
+        <Button asChild variant="outline" className="basis-1/2">
+          <Link href="/tutorial/step-1">Previous Step</Link>
+        </Button>
+        <Button asChild variant="secondary" className="basis-1/2">
+          <Link href="/tutorial/step-3">Next Step</Link>
+        </Button>
+      </div>
     </LessonLayout>
   );
 }
