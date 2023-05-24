@@ -1,9 +1,9 @@
 "use client";
 
 import { Coordinates, Mafs, Plot, Point, useStopwatch } from "mafs";
+import { useEffect, useRef, useState } from "react";
 import { func } from "~/lib/utils";
 import { Curvature } from "./curvature";
-import { useEffect, useRef, useState } from "react";
 
 export function Graph({ s }: { s: func[] }) {
   const parentRef = useRef<HTMLDivElement>(null);

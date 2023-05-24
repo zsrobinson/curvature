@@ -1,9 +1,9 @@
 "use client";
 
 import { Coordinates, Mafs, Plot, Point, useStopwatch } from "mafs";
-import { func } from "~/lib/utils";
 import { useEffect, useRef, useState } from "react";
 import { Curvature } from "~/components/curvature";
+import { func } from "~/lib/utils";
 
 type GraphProps = {
   s: func[];

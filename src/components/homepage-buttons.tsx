@@ -1,8 +1,8 @@
 "use client";
 
+import { IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import { Button, ButtonProps } from "./ui/button";
-import { IconArrowRight } from "@tabler/icons-react";
 
 export function HomepageButtons() {
   return (

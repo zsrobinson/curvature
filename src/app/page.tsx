@@ -1,4 +1,3 @@
-import { IconArrowRight } from "@tabler/icons-react";
 import { HomepageButtons } from "~/components/homepage-buttons";
 import { HomepageGraph } from "~/components/homepage-graph";
 import "./page.css";

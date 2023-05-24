@@ -5,11 +5,11 @@ import { useState } from "react";
 import { BlockMath, InlineMath } from "react-katex";
 import { LessonLayout } from "~/components/lesson-layout";
 import { Input } from "~/components/ui/input";
+import { BoundInput } from "./bound-input";
+import { Graph } from "./graph";
 import { Slider } from "./slider";
 import { SliderControl } from "./slider-control";
 import { SliderHeader } from "./slider-header";
-import { BoundInput } from "./bound-input";
-import { Graph } from "./graph";
 
 export default function Page() {
   const [xNode, setXNode] = useState<math.MathNode>(math.parse("t"));
