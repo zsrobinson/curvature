@@ -10,8 +10,6 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 export default function Page() {
-  const gallery = ["cycloid", "heart", "oval", "rose", "slanted-sine"];
-
   return (
     <main className="flex flex-col items-center gap-8 p-8">
       <h2 className="text-3xl font-semibold">Gallery</h2>
