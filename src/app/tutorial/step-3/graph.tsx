@@ -13,11 +13,7 @@ import { useEffect, useRef, useState } from "react";
 import { cycloid } from "~/lib/curves";
 import { deriv, func, mag } from "~/lib/utils";
 
-type GraphProps = {
-  activeVector: "T" | "ds/dt";
-};
-
-export function Graph({ activeVector }: GraphProps) {
+export function Graph() {
   const parentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(500);
 
@@ -47,6 +43,11 @@ export function Graph({ activeVector }: GraphProps) {
     (t: number) => dsdt[0](t) / mag(dsdt)(t),
     (t: number) => dsdt[1](t) / mag(dsdt)(t),
   ];
+  const dTdt = [deriv(T[0]), deriv(T[1])];
+  const dTds = [
+    (t: number) => dTdt[0](t) / mag(dsdt)(t),
+    (t: number) => dTdt[1](t) / mag(dsdt)(t),
+  ];
 
   return (
     <div className="overflow-none h-full grow" ref={parentRef}>
@@ -59,10 +60,13 @@ export function Graph({ activeVector }: GraphProps) {
         />
         <Vector
           tail={evalVec(s)}
-          tip={vec.add(
-            evalVec(s),
-            activeVector === "ds/dt" ? evalVec(dsdt) : evalVec(T)
-          )}
+          tip={vec.add(evalVec(s), evalVec(T))}
+          color="red"
+        />
+        <Vector
+          tail={evalVec(s)}
+          tip={vec.add(evalVec(s), evalVec(dTds))}
+          color="cyan"
         />
         <Point x={s[0](t)} y={s[1](t)} />
       </Mafs>
