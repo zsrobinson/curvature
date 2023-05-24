@@ -13,60 +13,38 @@ export function Navbar() {
         <h1 className="text-xl font-bold">Curvature Project</h1>
       </Link>
 
-      <div className="flex gap-4">
+      <div className="flex items-center gap-4">
         <Link
-          href="/examples/cycloid"
+          href="/tutorial/step-1"
           className={
-            path.includes("examples/cycloid")
-              ? "font-bold underline underline-offset-4"
+            path.includes("tutorial")
+              ? "rounded-md bg-zinc-800 px-2 py-0.5 font-semibold"
               : "text-zinc-400"
           }
         >
-          Cycloid
+          Tutorial
         </Link>
 
         <Link
-          href="/examples/oval"
+          href="/gallery"
           className={
-            path.includes("examples/oval")
-              ? "font-bold underline underline-offset-4"
+            path.includes("gallery")
+              ? "rounded-md bg-zinc-800 px-2 py-0.5 font-semibold"
               : "text-zinc-400"
           }
         >
-          Oval
+          Gallery
         </Link>
 
         <Link
-          href="/examples/rose"
+          href="/playground"
           className={
-            path.includes("examples/rose")
-              ? "font-bold underline underline-offset-4"
+            path.includes("playground")
+              ? "rounded-md bg-zinc-800 px-2 py-0.5 font-semibold"
               : "text-zinc-400"
           }
         >
-          Rose
-        </Link>
-
-        <Link
-          href="/examples/slanted-sin"
-          className={
-            path.includes("examples/slanted-sin")
-              ? "font-bold underline underline-offset-4"
-              : "text-zinc-400"
-          }
-        >
-          Slanted Sin
-        </Link>
-
-        <Link
-          href="/examples/heart"
-          className={
-            path.includes("examples/heart")
-              ? "font-bold underline underline-offset-4"
-              : "text-zinc-400"
-          }
-        >
-          Heart
+          Playground
         </Link>
       </div>
 
