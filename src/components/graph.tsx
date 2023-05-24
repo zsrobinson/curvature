@@ -4,6 +4,7 @@ import { Coordinates, Mafs, Plot, Point, useStopwatch } from "mafs";
 import { useEffect, useRef, useState } from "react";
 import { func } from "~/lib/utils";
 import { Curvature } from "./curvature";
+import { InlineMath } from "react-katex";
 
 export function Graph({ s }: { s: func[] }) {
   const parentRef = useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ export function Graph({ s }: { s: func[] }) {
   }, []);
 
   return (
-    <div className="overflow-none h-full grow" ref={parentRef}>
+    <div className="overflow-none relative h-full grow" ref={parentRef}>
       <Mafs height={height} viewBox={{ x: [-1, 7], y: [-5, 5] }} zoom>
         <Coordinates.Cartesian />
         <Plot.Parametric
@@ -38,6 +39,9 @@ export function Graph({ s }: { s: func[] }) {
         <Curvature s={s} t={t} showPoint showTangent />
         <Point x={s[0](t)} y={s[1](t)} />
       </Mafs>
+      <p className="absolute bottom-0 left-0 flex flex-col p-4 font-math text-lg">
+        <InlineMath math={`t = ${t.toFixed(3)}`} />
+      </p>
     </div>
   );
 }
