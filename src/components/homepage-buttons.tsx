@@ -7,7 +7,11 @@ import { Button, ButtonProps } from "./ui/button";
 export function HomepageButtons() {
   return (
     <div className="flex justify-center gap-4 pt-4">
-      <HomepageButton variant="default" text="Tutorial" href="/tutorial" />
+      <HomepageButton
+        variant="default"
+        text="Tutorial"
+        href="/tutorial/step-1"
+      />
       <HomepageButton
         variant="secondary"
         text="Examples"

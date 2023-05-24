@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 export default function Page() {
-  return <p className="p-8">This is a page!</p>;
+  redirect("/tutorial/step-1");
 }
