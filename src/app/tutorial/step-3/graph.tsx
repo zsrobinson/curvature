@@ -13,7 +13,11 @@ import { useEffect, useRef, useState } from "react";
 import { cycloid } from "~/lib/curves";
 import { deriv, func, mag } from "~/lib/utils";
 
-export function Graph() {
+type GraphProps = {
+  vectorTail: "s" | "T";
+};
+
+export function Graph({ vectorTail }: GraphProps) {
   const parentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(500);
 
@@ -58,15 +62,16 @@ export function Graph() {
           xy={(t) => [s[0](t), s[1](t)]}
           opacity={0.6}
         />
+        <Vector tail={evalVec(s)} tip={vec.add(evalVec(s), evalVec(T))} />
         <Vector
-          tail={evalVec(s)}
-          tip={vec.add(evalVec(s), evalVec(T))}
-          color="red"
-        />
-        <Vector
-          tail={evalVec(s)}
-          tip={vec.add(evalVec(s), evalVec(dTds))}
-          color="cyan"
+          tail={
+            vectorTail === "s" ? evalVec(s) : vec.add(evalVec(s), evalVec(T))
+          }
+          tip={vec.add(
+            vectorTail === "s" ? evalVec(s) : vec.add(evalVec(s), evalVec(T)),
+            evalVec(dTds)
+          )}
+          color="SkyBlue"
         />
         <Point x={s[0](t)} y={s[1](t)} />
       </Mafs>
