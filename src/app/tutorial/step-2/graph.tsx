@@ -10,6 +10,7 @@ import {
   vec,
 } from "mafs";
 import { useEffect, useRef, useState } from "react";
+import { InlineMath } from "react-katex";
 import { cycloid } from "~/lib/curves";
 import { deriv, func, mag } from "~/lib/utils";
 
@@ -49,7 +50,7 @@ export function Graph({ activeVector }: GraphProps) {
   ];
 
   return (
-    <div className="overflow-none h-full grow" ref={parentRef}>
+    <div className="overflow-none relative h-full grow" ref={parentRef}>
       <Mafs height={height} viewBox={{ x: [-1, 7], y: [-5, 5] }} zoom>
         <Coordinates.Cartesian />
         <Plot.Parametric
@@ -66,6 +67,17 @@ export function Graph({ activeVector }: GraphProps) {
         />
         <Point x={s[0](t)} y={s[1](t)} />
       </Mafs>
+      <p className="absolute bottom-0 left-0 flex flex-col p-4 font-math text-lg">
+        <InlineMath math={`t = ${t.toFixed(3)}`} />
+        <InlineMath
+          math={`\\left\\lVert ds/dt \\right\\rVert= ${mag(dsdt)(t).toFixed(
+            3
+          )}`}
+        />
+        <InlineMath
+          math={`\\left\\lVert T \\right\\rVert= ${mag(T)(t).toFixed(3)}`}
+        />
+      </p>
     </div>
   );
 }
