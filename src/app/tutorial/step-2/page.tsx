@@ -5,12 +5,16 @@ import { Graph } from "./graph";
 import { BlockMath, InlineMath } from "react-katex";
 import { Button } from "~/components/ui/button";
 import Link from "next/link";
+import { useState } from "react";
+import { Switch } from "~/components/ui/switch";
 
 export default function Page() {
+  const [activeVector, setActiveVector] = useState<"T" | "ds/dt">("ds/dt");
+
   return (
     <LessonLayout
       title="Step 2: Find the Unit Tangent Vector"
-      graph={<Graph />}
+      graph={<Graph activeVector={activeVector} />}
     >
       <p className="pb-4">
         The Unit Tangent Vector (<InlineMath math="T" />) is the tangent of the
@@ -64,8 +68,31 @@ export default function Page() {
         <span className="text-xl">
           <InlineMath math="\frac{ds}{dt}" />
         </span>{" "}
-        and <InlineMath math="T" /> are.
+        and <InlineMath math="T" /> are. Try flipping between the visualizations
+        of both of these vectors to get a better understanding of what they
+        represent. Once you&apos;re ready, move on to the next step.
       </p>
+
+      <div className="flex justify-center pt-4">
+        <div className="flex items-center gap-4">
+          <span className="text-2xl">
+            <InlineMath math="\frac{ds}{dt}" />
+          </span>
+          <Switch
+            checked={activeVector === "T"}
+            onCheckedChange={(e) => {
+              if (e) {
+                setActiveVector("T");
+              } else {
+                setActiveVector("ds/dt");
+              }
+            }}
+          />
+          <span className="text-xl">
+            <InlineMath math="T" />
+          </span>
+        </div>
+      </div>
 
       <Button asChild className="mt-8 w-full" variant="secondary">
         <Link href="/tutorial/step-3">Next Step</Link>
