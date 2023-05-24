@@ -12,11 +12,7 @@ export function HomepageButtons() {
         text="Tutorial"
         href="/tutorial/step-1"
       />
-      <HomepageButton
-        variant="secondary"
-        text="Examples"
-        href="/examples/cycloid"
-      />
+      <HomepageButton variant="secondary" text="Gallery" href="/gallery" />
       <HomepageButton
         variant="secondary"
         text="Playground"
