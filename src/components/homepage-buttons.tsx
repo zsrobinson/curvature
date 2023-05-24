@@ -9,14 +9,13 @@ export function HomepageButtons() {
     <div className="flex justify-center gap-4 pt-4">
       <HomepageButton
         variant="default"
-        text="Tutorial"
+        text="Visit the Tutorial"
         href="/tutorial/step-1"
       />
-      <HomepageButton variant="secondary" text="Gallery" href="/gallery" />
       <HomepageButton
         variant="secondary"
-        text="Playground"
-        href="/playground"
+        text="View the Gallery"
+        href="/gallery"
       />
     </div>
   );
