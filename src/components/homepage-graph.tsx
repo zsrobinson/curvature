@@ -20,7 +20,7 @@ export function HomepageGraph() {
   const opacityMultiplier = time < 1 / 0.15 ? easedTimeCurve : 1;
 
   return (
-    <div className="flex w-full justify-center">
+    <div className="pointer-events-none flex w-full justify-center">
       <Mafs pan={false} width="auto" viewBox={{ x: [-9, 9], y: [-5, 4] }}>
         <Plot.Parametric
           xy={(t) => [s[0](t), s[1](t)]}
