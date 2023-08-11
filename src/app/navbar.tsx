@@ -1,13 +1,17 @@
 "use client";
 
-import { IconBrandGithub, IconRotate360 } from "@tabler/icons-react";
+import {
+  IconBrandGithub,
+  IconInfoCircle,
+  IconRotate360,
+} from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const path = usePathname();
   return (
-    <div className="z-10 flex flex-wrap items-center justify-between gap-1 border-b border-zinc-800 bg-zinc-900 p-4 md:px-8">
+    <div className="z-10 flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 bg-zinc-900 p-4 md:px-8">
       <Link href="/" className="flex items-center gap-2">
         <IconRotate360 />
         <h1 className="text-xl font-bold">Curvature Project</h1>
@@ -48,13 +52,23 @@ export function Navbar() {
         </Link>
       </div>
 
-      <a
-        href="https://github.com/zsrobinson/curvature"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <IconBrandGithub />
-      </a>
+      <div className="flex gap-2">
+        <a
+          href="https://github.com/zsrobinson/curvature"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IconBrandGithub />
+        </a>
+
+        <a
+          href="https://github.com/zsrobinson/curvature#about-this-project"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IconInfoCircle />
+        </a>
+      </div>
     </div>
   );
 }
