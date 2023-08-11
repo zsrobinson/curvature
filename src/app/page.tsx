@@ -4,8 +4,8 @@ import "./page.css";
 
 export default function Page() {
   return (
-    <main className="absolute flex w-full flex-col items-center justify-between">
-      <section className="flex min-h-screen w-full flex-col justify-between border-b border-zinc-700 bg-gradient-to-br from-transparent to-zinc-900 pt-16 ">
+    <main className="absolute flex w-full flex-col items-center justify-between min-h-screen">
+      <section className="flex w-full flex-col justify-between border-b border-zinc-800 bg-gradient-to-br from-transparent to-zinc-900 pt-16 ">
         <div className="flex flex-col gap-2 p-12">
           <span className="text-center text-6xl font-bold tracking-tight">
             We all know curves are curvy.
@@ -15,10 +15,13 @@ export default function Page() {
           </span>
           <HomepageButtons />
         </div>
+
+        <div style={{ height: "10vh" }}></div>
+
         <HomepageGraph />
       </section>
 
-      <span className="p-4 text-center text-sm text-zinc-500">
+      <span className="p-4 pb-8 text-center text-sm text-zinc-500">
         Created by{" "}
         <a
           href="https://zsrobinson.com"
