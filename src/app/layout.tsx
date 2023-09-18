@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Navbar } from "./navbar";
 
-export const metadata = { title: "Curvature Project" };
+export const metadata = { title: "Concepts in Curvature" };
 
 import "mafs/core.css";
 import "mafs/font.css";

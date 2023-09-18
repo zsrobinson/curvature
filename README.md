@@ -1,4 +1,4 @@
-# Curvature Project
+# Concepts in Curvature
 
 <p align = "center">
 <img src="https://curvature.zsrobinson.com/cycloid.gif" alt="an animation of a cycloid's curvature" />
